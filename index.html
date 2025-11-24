@@ -7,10 +7,70 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Hello, World!</h1>
-    <h2>Heading 2</h2>
-    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas excepturi perspiciatis sint corporis quis aspernatur tempora nisi cupiditate, animi dolorem! Labore suscipit ipsam molestias repellendus expedita facilis impedit dolorem porro?</p>
+    <header>
+        <nav>
+            <ul class="nav-list">
+                <li class="nav-item"><a href="#home">Home</a></li>
+                <li class="nav-item"><a href="#about">About Me</a></li>
+                <li class="nav-item"><a href="#projects">Projects</a></li>
+                <li class="nav-item"><a href="#contact">Contact</a></li>
+            </ul>
+            <ul class="social-links">
+                <li class="social-media-item"><a href=""><img src="./images/github-icon.png" alt="GitHub"></a></li>
+                <li class="social-media-item"><a href=""><img src="./images/linkedin-icon.png" alt="LinkedIn"></a></li>
+                <li class="social-media-item"><a href=""><img src="./images/twitter-icon.png" alt="Twitter"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+
+        <section class="container" id="home">
+            <div  class="content">
+                <h1 id="first-name">Nethan Quinn</h1>
+                <h1 id="last-name">Jael</h1> 
+                <h3 id="occupation">Software Engineer</h3>   
+                <a href="#about">
+                    <button type="button">Read More</button>
+                </a> 
+            </div>
+        </section>
+        <section class="container" id="about">
+            <h1>About Me</h1>
+            <p>Welcome to my personal portfolio! Here you can learn more about me and my work.</p>
+            <img id="profile-image" src="./images/profile-image.jpg" alt="Profile Image">
+        </section>
+        <section class="container" id="projects">
+            <h1>Projects</h1>
+            <ul>
+                <li>Project 1: Description of project 1.</li>
+                <li>Project 2: Description of project 2.</li>
+                <li>Project 3: Description of project 3.</li>
+            </ul>
+        </section>
+        <section class="" id="resume">
     
+        </section>
+        <section class="container" id="contact">
+            <h1>Contact Me</h1>
+            <p>You can reach me at: <a href="mailto:your.email@example.com">your.email@example.com</a></p>
+            <form action="" method="post">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                <br>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <br>
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" required></textarea>
+                <br>
+                <button type="submit">Send</button>
+            </form>
+    
+        </section>
+    </main>
+    <footer>
+        <p>© 2024 Your Name. All rights reserved.</p>
+    </footer>
 </body>
 <script src="./js/script.js"></script>
 </html>
