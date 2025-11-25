@@ -59,6 +59,14 @@ button {
     transition: background-color 0.3s ease;
 }
 
+button:hover {
+    background-color: #ff4500;
+}
+
+button:active {
+    background-color: #e03e00;
+}
+
 img {
     object-fit: contain;
 }
@@ -215,7 +223,7 @@ footer {
 }
 
 #projects {
-    background: radial-gradient(farthest-corner at top, #22424a, #ff6347);
+    background: radial-gradient(farthest-corner at top, var(--color-1), var(--color-2));
     padding: 2rem;
     justify-content: flex-start;
 }
@@ -252,7 +260,7 @@ footer {
 }
 
 #profile-image {
-    filter: drop-shadow(0 4px 20px rgba(0, 0, 0, 0.5));
+    filter: drop-shadow(0 4px 20px var(--color-2));
     width: 100%;
     object-fit: contain;
 }
@@ -316,6 +324,6 @@ footer {
 }
 
 #contact-form textarea {
-    max-height: 200px;
+    max-height: 150px;
     
 }

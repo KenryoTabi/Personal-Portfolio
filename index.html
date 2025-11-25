@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-    <title>Document</title>
+    <link rel="icon" type="image/x-icon" sizes="512x512" href="./images/KTB LOGO.ico">
+    <title>KenryoTabi</title>
 </head>
 <body>
     <header>
@@ -87,39 +87,43 @@
         </section>
         <section class="container" id="contact">
             <div class="content" id="contact-content">
-                <h1>Get in Touch</h1>
+                <h1 class="emphasize">Get in Touch</h1>
                 <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Optio ipsa nemo minima! Nemo id libero quisquam hic tenetur, veritatis ducimus nam? Facere recusandae, qui minus eum amet enim vitae optio!</p>
                 <address>
                     <div>
-                        <h2>Address</h2>
+                        <h2 class="emphasize">Address</h2>
                         <p>Brgy. Cabugao Norte, Pavia, Iloilo, Philippines</p>
                     </div>
                     <div>
-                        <h2>Email</h2>
+                        <h2 class="emphasize">Email</h2>
                         <p>nethanquinnjael@gmail.com</p>
                     </div>
                     <div>
-                        <h2>Phone</h2>
+                        <h2 class="emphasize">Phone</h2>
                         <p>+639695085675</p>
                     </div>
                 </address>
             </div>
             <div class="card" id="contact-form">
                 <h1>Contact Form</h1>
-                <form action="" method="post">
+                <form action="" method="post" id="form">
                     <div class="form-input">
                         <label for="name">Name</label>
-                        <input type="text" name="name" autocomplete="name" required>
+                        <input type="text" name="name" autocomplete="name" maxlength="50" required>
+                    </div>
+                    <div class="form-input">
+                        <label for="phone">Phone</label>
+                        <input type="tel" name="phone" autocomplete="tel" maxlength="16" required>
                     </div>
                     <div class="form-input">
                         <label for="email">Email</label>
-                        <input type="email" name="email" autocomplete="email" required>
+                        <input type="email" name="email" autocomplete="email" maxlength="50" required>
                     </div>
                     <div class="form-input">
                         <label for="message">Message</label>
                             <textarea id="message" name="message" required></textarea>
                     </div>
-                    <button type="submit">Send</button>
+                    <button type="submit" formaction="">Send</button>
                 </form>
             </div>
         </section>
