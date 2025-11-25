@@ -4,21 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
     <title>Document</title>
 </head>
 <body>
     <header>
         <nav>
             <ul class="nav-list">
-                <li class="nav-item"><a href="#home">Home</a></li>
-                <li class="nav-item"><a href="#about">About Me</a></li>
-                <li class="nav-item"><a href="#projects">Projects</a></li>
-                <li class="nav-item"><a href="#contact">Contact</a></li>
+                <li class="nav-item"><a onclick="goToSection('home')">Home</a></li>
+                <li class="nav-item"><a onclick="goToSection('about')">About Me</a></li>
+                <li class="nav-item"><a onclick="goToSection('projects')">Projects</a></li>
+                <li class="nav-item"><a onclick="goToSection('contact')">Contact</a></li>
             </ul>
             <ul class="social-links">
-                <li class="social-media-item"><a href=""><img src="./images/github-icon.png" alt="GitHub"></a></li>
-                <li class="social-media-item"><a href=""><img src="./images/linkedin-icon.png" alt="LinkedIn"></a></li>
-                <li class="social-media-item"><a href=""><img src="./images/twitter-icon.png" alt="Twitter"></a></li>
+                <li class="social-media-item"><a href="https://github.com/KenryoTabi" target="_blank"><i class="fa-brands fa-github"></i></a></li>
+                <li class="social-media-item"><a href="" target="_blank"><i class="fa-brands fa-twitter"></i></a></li>
+                <li class="social-media-item"><a href="https://www.instagram.com/kenryotabi/" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
+                <li class="social-media-item"><a href="https://www.facebook.com/KenryoTabi/" target="_blank"><i class="fa-brands fa-facebook"></i></a></li>
             </ul>
         </nav>
     </header>
@@ -30,7 +33,7 @@
                 <h1 id="last-name">Jael</h1> 
                 <h3 class="emphasize" id="occupation">Software Engineer</h3>
                 <div>
-                    <button type="button">Read More</button>
+                    <button type="button" onclick="goToSection('about')">Read More</button>
                 </div>  
             </div>
         </section>
@@ -38,7 +41,7 @@
             <div class="container content" id="about-content">
                 <h1><span class="emphasize">Professional</span> Software Engineer</h1>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis fuga consectetur ratione, ut quaerat tenetur at nesciunt expedita. In culpa a ipsum numquam facilis dolorem cumque quos at ad ex? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis at illum officiis dignissimos ipsa nam a, enim consequatur minima quaerat sunt possimus, voluptatum sequi? Cumque quidem ducimus modi pariatur fugiat!</p>
-                <button type="button">View Projects</button>
+                <button type="button" onclick="goToSection('projects')">View Projects</button>
             </div>
             <div class="container image-container">
                 <img id="profile-image" src="./images/profile-image.png" alt="Profile Image">
@@ -47,31 +50,31 @@
         <section class="container" id="projects">
             <h1>Projects</h1>
             <ul>
-                <li class="card">
+                <li class="card project">
                         <figure>
-                            <figcaption>Project 1 Screenshot</figcaption>
-                            <img src="./images/project-one.png" alt="Project 1 Screenshot">
+                            <figcaption>SignoTech</figcaption>
+                            <img src="./images/project-one.png" alt="SignoTech Logo">
                         </figure>
                 </li>
-                <li class="card">
+                <li class="card project">
                     <figure>
                         <figcaption>Project 2 Screenshot</figcaption>
                         <img src="./images/project2.png" alt="Project 2 Screenshot">
                     </figure>
                 </li>
-                <li class="card">
+                <li class="card project">
                     <figure>
                         <figcaption>Project 3 Screenshot</figcaption>
                         <img src="./images/project3.png" alt="Project 3 Screenshot">
                     </figure>
                 </li>
-                <li class="card">
+                <li class="card project">
                     <figure>
                         <figcaption>Project 4 Screenshot</figcaption>
                         <img src="./images/project4.png" alt="Project 4 Screenshot">
                     </figure>
                 </li>
-                <li class="card">
+                <li class="card project">
                     <figure>
                         <figcaption>Project 5 Screenshot</figcaption>
                         <img src="./images/project5.png" alt="Project 5 Screenshot">
@@ -83,21 +86,42 @@
     
         </section>
         <section class="container" id="contact">
-            <h1>Contact Me</h1>
-            <p>You can reach me at: <a href="mailto:your.email@example.com">your.email@example.com</a></p>
-            <form action="" method="post">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
-                <br>
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-                <br>
-                <label for="message">Message:</label>
-                <textarea id="message" name="message" required></textarea>
-                <br>
-                <button type="submit">Send</button>
-            </form>
-    
+            <div class="content" id="contact-content">
+                <h1>Get in Touch</h1>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Optio ipsa nemo minima! Nemo id libero quisquam hic tenetur, veritatis ducimus nam? Facere recusandae, qui minus eum amet enim vitae optio!</p>
+                <address>
+                    <div>
+                        <h2>Address</h2>
+                        <p>Brgy. Cabugao Norte, Pavia, Iloilo, Philippines</p>
+                    </div>
+                    <div>
+                        <h2>Email</h2>
+                        <p>nethanquinnjael@gmail.com</p>
+                    </div>
+                    <div>
+                        <h2>Phone</h2>
+                        <p>+639695085675</p>
+                    </div>
+                </address>
+            </div>
+            <div class="card" id="contact-form">
+                <h1>Contact Form</h1>
+                <form action="" method="post">
+                    <div class="form-input">
+                        <label for="name">Name</label>
+                        <input type="text" name="name" autocomplete="name" required>
+                    </div>
+                    <div class="form-input">
+                        <label for="email">Email</label>
+                        <input type="email" name="email" autocomplete="email" required>
+                    </div>
+                    <div class="form-input">
+                        <label for="message">Message</label>
+                            <textarea id="message" name="message" required></textarea>
+                    </div>
+                    <button type="submit">Send</button>
+                </form>
+            </div>
         </section>
     </main>
     <footer>
