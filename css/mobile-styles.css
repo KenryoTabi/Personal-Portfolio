@@ -1,0 +1,41 @@
+@media (max-width:768px) {
+    body {
+        font-size: 1rem;
+    }
+
+    .social-links {
+        gap: 1rem;
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        padding: 1rem;
+        box-shadow: 0 0 8px rgba(0,0,0,0.2);
+        border-radius: 8px;
+        flex-direction: column;
+    }
+
+    .modal .card {
+        min-width: 50% !important;
+    }
+
+    #projects {
+        flex-direction: column;
+
+    }
+
+    #contact {
+        flex-direction: column;
+    }
+
+    #contact-content {
+        align-items: center;
+        text-align: center;
+        height: 100%;
+        width: auto;
+    }
+
+    #contact-form {
+        width: 80%;
+        height: 100%;
+    }
+}

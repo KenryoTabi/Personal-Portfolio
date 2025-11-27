@@ -6,6 +6,10 @@ const nameField = document.querySelector('input[name="name"]');
 const phoneField = document.querySelector('input[name="phone"]');
 const messageTextarea = document.querySelector('textarea[name="message"]');
 
+const sections = document.querySelectorAll("section");
+
+const navLinks = document.querySelectorAll(".nav-item a");
+
 formInputs.forEach(input => {
     const inputField = input.querySelector('input, textarea');
     const label = input.querySelector('label');
@@ -19,14 +23,34 @@ formInputs.forEach(input => {
     
         if (inputField.value === '') {
             parentElement.style.borderBottomColor = '#fff';
-            label.classList.remove('active');
         }
 
     });
 });
 
+
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.getAttribute("id");
+
+        navLinks.forEach(link => {
+          link.classList.toggle("emphasize", link.getAttribute("href") === `#${id}`);
+        });
+      }
+    });
+  },
+  {
+    threshold: 0.7
+  }
+);
+
+sections.forEach(section => observer.observe(section));
+
 function goToSection(sectionId) {
     document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
+
 }
 
 function ValidateEmail() {
@@ -154,4 +178,36 @@ form.addEventListener('submit', function(event) {
     } else {
         alert('Please correct the errors in the form before submitting.');
     }
+});
+
+const modal = document.getElementById("image-modal");
+const popupImage = document.getElementById("popup-image");
+const modalTitle = document.getElementById("modal-title")
+
+const thumbnails = document.querySelectorAll(".thumbnail");
+const closeBtn = document.querySelector(".close");
+
+thumbnails.forEach(thumbnail => {
+    
+    thumbnail.addEventListener("click", function () {
+      const imgSrc = this.dataset.image;
+      popupImage.src = imgSrc;
+      modalTitle.textContent = this.dataset.title
+      modal.style.display = "flex";
+    });
+    
+});
+
+// When clicking the thumbnail
+
+// Close modal
+closeBtn.addEventListener("click", function () {
+  modal.style.display = "none";
+});
+
+// Close when clicking outside the image
+modal.addEventListener("click", function (e) {
+  if (e.target === modal) {
+    modal.style.display = "none";
+  }
 });

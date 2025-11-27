@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/mobile-styles.css">
+    <link rel="stylesheet" href="./css/modal.css"> 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="icon" type="image/x-icon" sizes="512x512" href="./images/KTB LOGO.ico">
     <title>KenryoTabi</title>
@@ -12,10 +14,10 @@
     <header>
         <nav>
             <ul class="nav-list">
-                <li class="nav-item"><a onclick="goToSection('home')">Home</a></li>
-                <li class="nav-item"><a onclick="goToSection('about')">About Me</a></li>
+                <li class="nav-item"><a class="emphasize" onclick="goToSection('home')">Home</a></li>
+                <li class="nav-item"><a onclick="goToSection('about')" >About Me</a></li>
                 <li class="nav-item"><a onclick="goToSection('projects')">Projects</a></li>
-                <li class="nav-item"><a onclick="goToSection('contact')">Contact</a></li>
+                <li class="nav-item"><a onclick="goToSection('contact')" >Contact</a></li>
             </ul>
             <ul class="social-links">
                 <li class="social-media-item"><a href="https://github.com/KenryoTabi" target="_blank"><i class="fa-brands fa-github"></i></a></li>
@@ -50,37 +52,49 @@
         <section class="container" id="projects">
             <h1>Projects</h1>
             <ul>
-                <li class="card project">
+                <li class="card project thumbnail" 
+                data-image="./images/project-one.png"
+                data-title="SignoTech">
                         <figure>
                             <figcaption>SignoTech</figcaption>
                             <img src="./images/project-one.png" alt="SignoTech Logo">
                         </figure>
                 </li>
-                <li class="card project">
+                <li class="card project thumbnail" 
+                data-image="./images/project-two.png"
+                data-title="Unidocs">
                     <figure>
-                        <figcaption>Project 2 Screenshot</figcaption>
-                        <img src="./images/project2.png" alt="Project 2 Screenshot">
+                        <figcaption>Unidocs</figcaption>
+                        <img src="./images/project-two.png" alt="Unidocs Logo">
                     </figure>
                 </li>
-                <li class="card project">
+                <li class="card project thumbnail" 
+                data-image="./images/project-three.png"
+                data-title="AutoTax">
                     <figure>
-                        <figcaption>Project 3 Screenshot</figcaption>
-                        <img src="./images/project3.png" alt="Project 3 Screenshot">
+                        <figcaption>AutoTax</figcaption>
+                        <img src="./images/project-three.png" alt="AutoTax Logo">
                     </figure>
                 </li>
-                <li class="card project">
+                <li class="card project thumbnail" 
+                data-image="./images/project-four.png"
+                data-title="Byte Banks">
                     <figure>
-                        <figcaption>Project 4 Screenshot</figcaption>
-                        <img src="./images/project4.png" alt="Project 4 Screenshot">
+                        <figcaption>Byte Banks</figcaption>
+                        <img src="./images/project-four.png" alt="Byte Banks Logo">
                     </figure>
                 </li>
-                <li class="card project">
+                <li class="card project thumbnail">
                     <figure>
                         <figcaption>Project 5 Screenshot</figcaption>
                         <img src="./images/project5.png" alt="Project 5 Screenshot">
                     </figure>
                 </li>
             </ul>
+            <div id="section-jump" onclick="goToSection('contact')">
+                <p>Contact Me</p>
+                <i class="fa-solid fa-angle-down"></i>
+            </div>
         </section>
         <section class="" id="resume">
     
@@ -131,6 +145,17 @@
     <footer>
         <p>© 2025 Nethan Quinn Jael. All rights reserved.</p>
     </footer>
+    <div id="image-modal" class="modal">
+        <div class="card">
+            <span class="close">&times;</span>
+            <h1 id="modal-title">Title</h1>
+            <div class="modal-content">
+                <img id="popup-image">
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iusto sit inventore officia, magni possimus ut itaque, earum veniam optio minima alias ea, iste tempore facere sint architecto aliquam laborum dignissimos.</p>
+            </div>
+            <button type="button">Link</button>
+        </div>
+    </div>
 </body>
 <script src="./js/script.js"></script>
 </html>
