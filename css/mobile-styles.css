@@ -3,6 +3,10 @@
         font-size: 1rem;
     }
 
+    nav {
+        align-items: center;
+    }
+
     .social-links {
         gap: 1rem;
         position: fixed;
