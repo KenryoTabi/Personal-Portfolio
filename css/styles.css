@@ -220,6 +220,7 @@ footer {
     background: #e2e2e2;
     padding: 2rem;
     flex-direction: row;
+    gap: 20px
 }
 
 #projects {

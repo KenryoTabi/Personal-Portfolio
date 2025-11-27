@@ -15,7 +15,7 @@
     }
 
     .modal .card {
-        min-width: 50% !important;
+        min-width: 70% !important;
     }
 
     #projects {
@@ -37,5 +37,13 @@
     #contact-form {
         width: 80%;
         height: 100%;
+    }
+
+    #about {
+        flex-direction: column-reverse;
+    }
+
+    #about-content h1 {
+        text-wrap-mode: nowrap;
     }
 }
