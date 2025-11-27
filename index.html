@@ -14,10 +14,10 @@
     <header>
         <nav>
             <ul class="nav-list">
-                <li class="nav-item"><a class="emphasize" onclick="goToSection('home')">Home</a></li>
-                <li class="nav-item"><a onclick="goToSection('about')" >About Me</a></li>
-                <li class="nav-item"><a onclick="goToSection('projects')">Projects</a></li>
-                <li class="nav-item"><a onclick="goToSection('contact')" >Contact</a></li>
+                <li class="nav-item"><a class="emphasize" data-target="home" onclick="goToSection('home')">Home</a></li>
+                <li class="nav-item"><a data-target="about" onclick="goToSection('about', this)" >About Me</a></li>
+                <li class="nav-item"><a data-target="projects" onclick="goToSection('projects', this)">Projects</a></li>
+                <li class="nav-item"><a data-target="contact" onclick="goToSection('contact', this)" >Contact</a></li>
             </ul>
             <ul class="social-links">
                 <li class="social-media-item"><a href="https://github.com/KenryoTabi" target="_blank"><i class="fa-brands fa-github"></i></a></li>

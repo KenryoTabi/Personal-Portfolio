@@ -36,7 +36,7 @@ const observer = new IntersectionObserver(
         const id = entry.target.getAttribute("id");
 
         navLinks.forEach(link => {
-          link.classList.toggle("emphasize", link.getAttribute("href") === `#${id}`);
+          link.classList.toggle("emphasize", link.dataset.target === id);
         });
       }
     });
@@ -50,7 +50,6 @@ sections.forEach(section => observer.observe(section));
 
 function goToSection(sectionId) {
     document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
-
 }
 
 function ValidateEmail() {
