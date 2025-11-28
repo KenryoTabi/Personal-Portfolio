@@ -13,13 +13,18 @@
         bottom: 20px;
         right: 20px;
         padding: 1rem;
-        box-shadow: 0 0 8px rgba(0,0,0,0.2);
+        box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
         border-radius: 8px;
         flex-direction: column;
     }
 
     .modal .card {
-        min-width: 70% !important;
+        min-width: 80% !important;
+    }
+
+    .close {
+        top: 50px;
+        right: 80px;
     }
 
     #projects {
@@ -47,10 +52,15 @@
         flex-direction: column-reverse;
     }
 
+    #skillset {
+        transform: translateY(-1.5rem);
+    }
+
     #skillset li {
         background-color: #00d544;
-        padding: 20px;
+        padding: 1rem;
         border-radius: 100px;
         font-size: 0.5rem;
+        
     }
 }

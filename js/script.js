@@ -20,7 +20,7 @@ formInputs.forEach(input => {
         }
     });
     inputField.addEventListener('blur', () => {
-    
+
         if (inputField.value === '') {
             parentElement.style.borderBottomColor = '#fff';
         }
@@ -30,20 +30,20 @@ formInputs.forEach(input => {
 
 
 const observer = new IntersectionObserver(
-  (entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const id = entry.target.getAttribute("id");
+    (entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const id = entry.target.getAttribute("id");
 
-        navLinks.forEach(link => {
-          link.classList.toggle("emphasize", link.dataset.target === id);
+                navLinks.forEach(link => {
+                    link.classList.toggle("emphasize", link.dataset.target === id);
+                });
+            }
         });
-      }
-    });
-  },
-  {
-    threshold: 0.7
-  }
+    },
+    {
+        threshold: 0.7
+    }
 );
 
 sections.forEach(section => observer.observe(section));
@@ -97,7 +97,7 @@ function validatePhoneNumber() {
         phoneField.value = prefix;
     }
 
-    let digits = phoneField.value.replace(/\D/g, "").substring(2); 
+    let digits = phoneField.value.replace(/\D/g, "").substring(2);
 
     if (digits.startsWith("09")) {
         digits = digits.substring(1);
@@ -146,9 +146,9 @@ function validateForm() {
 }
 
 function resetForm() {
-    
-    formInputs.forEach(function(input) {
-    
+
+    formInputs.forEach(function (input) {
+
         const inputField = input.querySelector('input, textarea');
         inputField.parentElement.style.borderBottomColor = '#fff';
     });
@@ -158,7 +158,7 @@ function resetForm() {
 
 messageTextarea.addEventListener("input", function (event) {
     const textarea = event.target;
-    textarea.style.height = "auto";                  
+    textarea.style.height = "auto";
     textarea.style.height = textarea.scrollHeight + "px";
 });
 
@@ -167,11 +167,11 @@ nameField.addEventListener('input', validateName);
 phoneField.addEventListener('input', validatePhoneNumber);
 messageTextarea.addEventListener('input', validateMessage);
 
-form.addEventListener('submit', function(event) {
-    event.preventDefault(); 
-    
+form.addEventListener('submit', function (event) {
+    event.preventDefault();
+
     if (validateForm()) {
-        alert('Form submitted successfully!');
+        sendEmail();
         resetForm();
     } else {
         alert('Please correct the errors in the form before submitting.');
@@ -180,34 +180,57 @@ form.addEventListener('submit', function(event) {
 
 const modal = document.getElementById("image-modal");
 const popupImage = document.getElementById("popup-image");
-const modalTitle = document.getElementById("modal-title")
-const modalDescription = document.getElementById("modal-desc")
+const modalTitle = document.getElementById("modal-title");
+const modalDescription = document.getElementById("modal-desc");
+const modalLinkBtn = document.getElementById("modal-link");
 
 const thumbnails = document.querySelectorAll(".thumbnail");
 const closeBtn = document.querySelector(".close");
 
 thumbnails.forEach(thumbnail => {
-    
+
     thumbnail.addEventListener("click", function () {
-      const imgSrc = this.dataset.image;
-      popupImage.src = imgSrc;
-      modalTitle.textContent = this.dataset.title
-      modalDescription.textContent = this.dataset.description
-      modal.style.display = "flex";
+        const imgSrc = this.dataset.image;
+        const url = this.dataset.link;
+
+        console.log(url);
+
+
+        popupImage.src = imgSrc;
+        modalTitle.textContent = this.dataset.title;
+        modalDescription.textContent = this.dataset.description;
+        modal.style.display = "flex";
+
+        if (url) {
+            modalLinkBtn.style.display = 'block';
+            modalLinkBtn.onclick = () => window.open(url, '_blank');
+        } else {
+            modalLinkBtn.style.display = 'none';
+            modalLinkBtn.onclick = null;
+        }
     });
-    
+
+
 });
 
-// When clicking the thumbnail
-
-// Close modal
 closeBtn.addEventListener("click", function () {
-  modal.style.display = "none";
+    modal.style.display = "none";
 });
 
-// Close when clicking outside the image
 modal.addEventListener("click", function (e) {
-  if (e.target === modal) {
-    modal.style.display = "none";
-  }
+    if (e.target === modal) {
+        modal.style.display = "none";
+    }
 });
+
+emailjs.init('NMfT4_I2DeutFwWiE');
+
+function sendEmail() {
+    const param = {
+        name: document.getElementById("name").value,
+        email: document.getElementById("email").value,
+        phone: document.getElementById("phone").value,
+        message: document.getElementById("message").value
+    }
+    emailjs.send("service_m0yje1o", "template_p4wz6rq", param).then(alert('Email Sent!'));
+}
