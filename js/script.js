@@ -145,17 +145,6 @@ function validateForm() {
     return isEmailValid && isNameValid && isPhoneValid;
 }
 
-messageTextarea.addEventListener("input", function (event) {
-    const textarea = event.target;
-    textarea.style.height = "auto";                  
-    textarea.style.height = textarea.scrollHeight + "px";
-});
-
-emailField.addEventListener('input', ValidateEmail);
-nameField.addEventListener('input', validateName);
-phoneField.addEventListener('input', validatePhoneNumber);
-messageTextarea.addEventListener('input', validateMessage);
-
 function resetForm() {
     
     formInputs.forEach(function(input) {
@@ -167,6 +156,16 @@ function resetForm() {
     form.reset();
 }
 
+messageTextarea.addEventListener("input", function (event) {
+    const textarea = event.target;
+    textarea.style.height = "auto";                  
+    textarea.style.height = textarea.scrollHeight + "px";
+});
+
+emailField.addEventListener('input', ValidateEmail);
+nameField.addEventListener('input', validateName);
+phoneField.addEventListener('input', validatePhoneNumber);
+messageTextarea.addEventListener('input', validateMessage);
 
 form.addEventListener('submit', function(event) {
     event.preventDefault(); 
@@ -182,6 +181,7 @@ form.addEventListener('submit', function(event) {
 const modal = document.getElementById("image-modal");
 const popupImage = document.getElementById("popup-image");
 const modalTitle = document.getElementById("modal-title")
+const modalDescription = document.getElementById("modal-desc")
 
 const thumbnails = document.querySelectorAll(".thumbnail");
 const closeBtn = document.querySelector(".close");
@@ -192,6 +192,7 @@ thumbnails.forEach(thumbnail => {
       const imgSrc = this.dataset.image;
       popupImage.src = imgSrc;
       modalTitle.textContent = this.dataset.title
+      modalDescription.textContent = this.dataset.description
       modal.style.display = "flex";
     });
     

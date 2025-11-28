@@ -42,8 +42,13 @@
         <section class="container" id="about">
             <div class="content" id="about-content">
                 <h1><span class="emphasize">Professional</span> Software Engineer</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis fuga consectetur ratione, ut quaerat tenetur at nesciunt expedita. In culpa a ipsum numquam facilis dolorem cumque quos at ad ex? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis at illum officiis dignissimos ipsa nam a, enim consequatur minima quaerat sunt possimus, voluptatum sequi? Cumque quidem ducimus modi pariatur fugiat!</p>
-                <button type="button" onclick="goToSection('projects')">View Projects</button>
+                <p>I’m a software engineer specializing in web, mobile, and game development, with a growing passion for building products that create real impact. As an aspiring entrepreneur, I’m driven by the challenge of turning ideas into valuable solutions—whether that means designing intuitive interfaces, architecting scalable systems, or exploring new ways technology can solve everyday problems. With additional experience in data analysis, I bring a unique mix of creativity, technical depth, and analytical thinking to every project I work on.</p>
+                <div>
+                    <button type="button" onclick="goToSection('projects')">View Projects</button>
+                    <a href="./assets/Jael_N_Q_Resume.pdf" target="_blank" download>
+                        <button type="button" id="download-btn">My Resume</button>
+                    </a>
+                </div>
             </div>
             <div class="image-container">
                 <img id="profile-image" src="./images/profile-image.png" alt="Profile Image">
@@ -54,7 +59,9 @@
             <ul>
                 <li class="card project thumbnail" 
                 data-image="./images/project-one.png"
-                data-title="SignoTech">
+                data-title="SignoTech"
+                data-description="Signotech is a mobile application for Android and iOS designed to help users learn American Sign Language (ASL) through a built-in dictionary and guided lessons. Built using React Native for the frontend and Node.js for the backend, the app offers intuitive navigation, clean UI, and fast access to ASL gestures. I was fully responsible for the development, covering architecture, coding, and implementation."
+                data-hasLink="true">
                         <figure>
                             <figcaption>SignoTech</figcaption>
                             <img src="./images/project-one.png" alt="SignoTech Logo">
@@ -62,7 +69,9 @@
                 </li>
                 <li class="card project thumbnail" 
                 data-image="./images/project-two.png"
-                data-title="Unidocs">
+                data-title="Unidocs"
+                data-description="Unidocs is an innovative academic documentation and student-service platform conceptualized and pitched in a tech startup competition, where it received recognition from the panel. Our team developed the UI/UX through Figma and built a functional prototype using React Native (Expo) to demonstrate core features. As the CTO and CEO, I guided the technical architecture, product planning, and team leadership, helping form our startup group and driving the project toward its prototype release."
+                data-hasLink="true">
                     <figure>
                         <figcaption>Unidocs</figcaption>
                         <img src="./images/project-two.png" alt="Unidocs Logo">
@@ -70,7 +79,9 @@
                 </li>
                 <li class="card project thumbnail" 
                 data-image="./images/project-three.png"
-                data-title="AutoTax">
+                data-title="AutoTax"
+                data-description="AutoTax is a generative AI application designed to guide taxpayers through completing their tax forms by interpreting user inputs and providing AI-assisted suggestions. I initiated the concept and led the team in exploring practical GenAI integration. We built a prototype using HTML, CSS, and JavaScript, demonstrating how AI can automate and simplify the tax preparation process."
+                data-hasLink="false">
                     <figure>
                         <figcaption>AutoTax</figcaption>
                         <img src="./images/project-three.png" alt="AutoTax Logo">
@@ -78,16 +89,22 @@
                 </li>
                 <li class="card project thumbnail" 
                 data-image="./images/project-four.png"
-                data-title="Byte Banks">
+                data-title="Byte Banks"
+                data-description="Byte Banks is a Java-based ATM simulation program that demonstrates basic banking operations such as withdrawals, deposits, and balance inquiries. I developed this as a foundational side project to strengthen my understanding of Java logic, input handling, and simple financial computations."
+                data-hasLink="false">
                     <figure>
                         <figcaption>Byte Banks</figcaption>
                         <img src="./images/project-four.png" alt="Byte Banks Logo">
                     </figure>
                 </li>
-                <li class="card project thumbnail">
+                <li class="card project thumbnail"
+                data-image="./images/no-image.png"
+                data-title="Happy Road"
+                data-description="Happy Road is a Python-based 2D car game developed in PyCharm as a foundational programming project. Through building game mechanics, movement logic, and simple interactions, I gained a solid grasp of Python fundamentals and how object-oriented programming can be applied to real projects."
+                data-hasLink="false">
                     <figure>
-                        <figcaption>Project 5 Screenshot</figcaption>
-                        <img src="./images/project5.png" alt="Project 5 Screenshot">
+                        <figcaption>Happy Road</figcaption>
+                        <img src="./images/no-image.png" alt="Project 5 Screenshot">
                     </figure>
                 </li>
             </ul>
@@ -96,13 +113,32 @@
                 <i class="fa-solid fa-angle-down"></i>
             </div>
         </section>
+        <div id="skillset">
+            <ul>
+                <li>
+                    Web Development
+                </li>
+                <li>
+                    Mobile App Development
+                </li>
+                <li>
+                    Game Development
+                </li>
+                <li>
+                    Market Analytic
+                </li>
+                <li>
+                    Data Analytic
+                </li>
+            </ul>
+        </div>
         <section class="" id="resume">
     
         </section>
         <section class="container" id="contact">
             <div class="content" id="contact-content">
                 <h1 class="emphasize">Get in Touch</h1>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Optio ipsa nemo minima! Nemo id libero quisquam hic tenetur, veritatis ducimus nam? Facere recusandae, qui minus eum amet enim vitae optio!</p>
+                <p>I’m actively seeking collaborations, clients, and partners who want to build meaningful digital products. Whether it’s web, mobile, game development, or data-driven solutions, I’m ready to bring ideas to life. Let’s connect and explore what we can create together.</p>
                 <address>
                     <div>
                         <h2 class="emphasize">Address</h2>
@@ -151,7 +187,7 @@
             <h1 id="modal-title">Title</h1>
             <div class="modal-content">
                 <img id="popup-image">
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iusto sit inventore officia, magni possimus ut itaque, earum veniam optio minima alias ea, iste tempore facere sint architecto aliquam laborum dignissimos.</p>
+                <p id="modal-desc"></p>
             </div>
             <button type="button">Link</button>
         </div>
