@@ -16,7 +16,7 @@ formInputs.forEach(input => {
     const parentElement = inputField.parentElement;
     inputField.addEventListener('focus', () => {
         if (inputField.value === '') {
-            parentElement.style.borderBottomColor = 'var(--color-1)';
+            parentElement.style.borderBottomColor = 'var(--info)';
         }
     });
     inputField.addEventListener('blur', () => {
@@ -55,19 +55,19 @@ function goToSection(sectionId) {
 function ValidateEmail() {
     const email = emailField.value;
     const parentElement = emailField.parentElement;
-    parentElement.style.borderBottomColor = 'var(--color-1) ';
+    parentElement.style.borderBottomColor = 'var(--info) ';
 
     const emailPattern = /^[a-zA-Z0-9._%+-]{2,}@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     if (email === '') {
-        parentElement.style.borderBottomColor = 'var(--color-1)';
+        parentElement.style.borderBottomColor = 'var(--info)';
         return false;
     }
     if (!emailPattern.test(email)) {
-        parentElement.style.borderBottomColor = 'red';
+        parentElement.style.borderBottomColor = 'var(--error)';
         return false;
 
     } else {
-        parentElement.style.borderBottomColor = 'green';
+        parentElement.style.borderBottomColor = 'var(--success)';
         return true;
     }
 }
@@ -78,15 +78,15 @@ function validateName() {
     const namePattern = /^[a-zA-Z\s]{2,}$/;
 
     if (name === "") {
-        parentElement.style.borderBottomColor = 'var(--color-1)';
+        parentElement.style.borderBottomColor = 'var(--info)';
         return false;
     }
 
     if (!namePattern.test(name)) {
-        parentElement.style.borderBottomColor = 'red';
+        parentElement.style.borderBottomColor = 'var(--error)';
         return false;
     } else {
-        parentElement.style.borderBottomColor = 'green';
+        parentElement.style.borderBottomColor = 'var(--success)';
         return true;
     }
 }
@@ -117,10 +117,10 @@ function validatePhoneNumber() {
     const parentElement = phoneField.parentElement;
 
     if (!phonePattern.test(phoneField.value.trim())) {
-        parentElement.style.borderBottomColor = 'red';
+        parentElement.style.borderBottomColor = 'var(--error)';
         return false;
     } else {
-        parentElement.style.borderBottomColor = 'green';
+        parentElement.style.borderBottomColor = 'var(--success)';
         return true;
     }
 }
@@ -130,11 +130,11 @@ function validateMessage() {
     const parentElement = messageTextarea.parentElement;
 
     if (message.length >= 1) {
-        parentElement.style.borderBottomColor = 'green';
+        parentElement.style.borderBottomColor = 'var(--success)';
         return true;
     } else {
-        parentElement.style.borderBottomColor = 'var(--color-1)';
-        return false;
+        parentElement.style.borderBottomColor = 'var(--info)';
+        return true;
     }
 }
 
